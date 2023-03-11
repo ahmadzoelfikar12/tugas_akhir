@@ -15,7 +15,7 @@
 
 <body>
     <script src="assets/js/initTheme.js"></script>
-    <div id="auth">
+    <div id="auth" style="overflow: hidden">
         <div class="row">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
