@@ -1,0 +1,23 @@
+.btn-login {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 40px;
+    /* gap: 10px; */
+
+    width: auto;
+    height: auto;
+
+    /* background: #A137DF; */
+    background-image: linear-gradient(to right, #A137DF 0%, #FA14FF 100%);
+    border-radius: 20px;
+    /* margin-left: 119px; */
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.row{
+    text-align: center;
+}
