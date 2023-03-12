@@ -36,6 +36,14 @@
     width: 40px;
     margin-right: 8px;
 }
+#theme_toggle{
+    justify-content: center;
+    text-align: center;
+    /* height: 80px; */
+    /* display: block; */
+    /* margin-left: 20px; */
+    margin-right: auto;
+}
 
 /* .footer {
    position: fixed;

@@ -21,15 +21,21 @@
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header position-relative align-items-center">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="justify-content-between align-items-center">
                         <div class="logo">
-                            <img src="{{ asset('assets/logo2.png') }}" id="logo_nav" class="center" alt="Logo"
-                                srcset="" style="text-align:center">
+                            <img src="{{ asset('assets/logo2.png') }}" id="logo_nav" alt="Logo"
+                                srcset="">
                         </div>
-                        <input class="form-check-input  me-0" type="checkbox" id="toggle-dark" hidden>
+                        <div class="theme-toggle d-flex gap-2  align-items-center mt-2" id="theme_toggle">
+                            <i class="mdi mdi-bird"></i>
+                            <div class="form-check form-switch fs-6">
+                                <input class="form-check-input  me-0" type="checkbox" id="toggle-dark" >
+                                <label class="form-check-label" ></label>
+                            </div>
+                            <i class="mdi mdi-sleep"></i>
+                        </div>
                         <div class="sidebar-toggler  x">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i
-                                    class="bi bi-x bi-middle"></i></a>
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                         </div>
                     </div>
                 </div>
@@ -37,25 +43,25 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
                         <li class="sidebar-item active">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="mdi mdi-duck"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="mdi mdi-account"></i>
                                 <span>Users</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="mdi mdi-book-music"></i>
                                 <span>Buku</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="#" class='sidebar-link'>
                                 <i class="mdi mdi-headphones"></i>
                                 <span>Literatur</span>
                             </a>
