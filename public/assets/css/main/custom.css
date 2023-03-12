@@ -18,6 +18,31 @@
     font-weight: bold;
 }
 
-.row{
+/* .row{
     text-align: center;
+} */
+
+#logo_nav{
+    justify-content: center;
+    text-align: center;
+    height: 80px;
+    display: block;
+    margin-left: 20px;
+    margin-right: auto;
 }
+
+#icon_profil{
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+}
+
+/* .footer {
+   position: fixed;
+   left: 25%;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+} */
