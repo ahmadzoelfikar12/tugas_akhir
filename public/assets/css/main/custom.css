@@ -12,10 +12,19 @@
     /* background: #A137DF; */
     background-image: linear-gradient(to right, #A137DF 0%, #FA14FF 100%);
     border-radius: 20px;
-    /* margin-left: 119px; */
+    margin-left: 100px;
     color: white;
     border: none;
     font-weight: bold;
+}
+
+#logo_login{
+    justify-content: center;
+    text-align: center;
+    height: 80px;
+    display: block;
+    margin-left: 80px;
+    margin-right: auto;
 }
 
 /* .row{

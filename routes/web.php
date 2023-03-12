@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
+    // return view('auth.lupa_password');
+    // return view('auth.reset_password');
     // return view('Dashboard.dashboard');
 });

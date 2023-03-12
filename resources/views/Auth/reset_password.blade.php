@@ -26,14 +26,20 @@
                     </p> --}}
 
                     <form action="index.html">
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl btn-user" id="username" placeholder="Email">
+                        {{-- <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="text" class="form-control form-control-xl btn-user" id="password" placeholder="Masukkan Password Baru">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
+                        </div> --}}
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="password" class="form-control form-control-xl" placeholder="Masukkan Password Baru">
+                            <div class="form-control-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password">
+                            <input type="password" class="form-control form-control-xl" placeholder="Konfirmasi Password Baru">
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>
@@ -46,7 +52,7 @@
                         </div> --}}
                         {{-- <button type="login" class="btn btn-login">Login</button> --}}
                         <button class="btn-login btn-lg shadow-lg mt-5">
-                            LOGIN
+                            RESET
                         </button>
                     </form>
                     {{-- <div class="text-center mt-5 text-lg fs-4">
