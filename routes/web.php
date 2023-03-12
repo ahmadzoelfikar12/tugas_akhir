@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
-    // return view('auth.lupa_password');
-    // return view('auth.reset_password');
-    // return view('Dashboard.dashboard');
+    if (Auth::user()) {
+        return redirect('/dashboard');
+    }
+    return view('Auth.login');
 });
+
+//untuk Login
+Route::get('/login', [AuthController::class, 'index'])->Middleware('guest')->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::resource('dashboard', DashboardController::class);

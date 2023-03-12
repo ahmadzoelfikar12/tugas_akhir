@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>DASHBOARD</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/main/custom.css') }}">
     <link rel="stylesheet" href="assets/css/main/app.css">
@@ -76,7 +76,17 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
+            <div>
+                @if (session()->has('error'))
+                    <div class="alert alert-danger">{!! session('error') !!}
+                    </div>
+                @endif
 
+                @if (session()->has('success'))
+                    <div class="alert alert-success">{!! session('success') !!}
+                    </div>
+                @endif
+            </div>
             <div class="page-heading">
                 <h3>Dashboard</h3>
             </div>
@@ -131,8 +141,11 @@
                                         <img src="assets/images/faces/1.jpg" id="icon_profil" alt="Face 1">
                                     </div>
                                     <div class="ms-1 name">
-                                        <h5 class="font-bold">John Duck</h5>
-                                        <h6 class="text-muted mb-0">@johnducky</h6>
+                                        <h5 class="font-bold">{{ auth()->user()->name }}</h5>
+                                        {{-- <h6 class="text-muted mb-0">@johnducky</h6> --}}
+                                        {{-- <li> --}}
+                                            <a href="/logout"><i class="mdi mdi-power"></i><span>Log Out</span></a>
+                                        {{-- </li> --}}
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +169,16 @@
             <script src="assets/js/pages/dashboard.js"></script>
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // show the alert
+            setTimeout(function() {
+                $(".alert").alert('close');
+            }, 2000);
+        });
+    </script>
 </body>
 
 </html>

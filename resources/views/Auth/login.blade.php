@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="assets/css/main/app-dark.css">
     <link rel="stylesheet" href="assets/css/pages/auth.css">
     <link rel="icon" href="{{ asset('assets/logo1.png') }}" type="image/x-icon">
+
+    <style>
+        .toast-success {
+            background-color: #2192FF !important;
+        }
+
+        .toast-error {
+            background-color: #bd362f !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,6 +26,17 @@
     <div id="auth" style="overflow: hidden">
         <div class="row">
             <div class="col-lg-5 col-12">
+                <div>
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">{!! session('error') !!}
+                        </div>
+                    @endif
+
+                    @if (session()->has('success'))
+                        <div class="alert alert-success">{!! session('success') !!}
+                        </div>
+                    @endif
+                </div>
                 <div id="auth-left">
                     <div class="auth-logo">
                         <img src="{{ asset('assets/logo1.png') }}" id="logo_login" alt="Logo"style="height: 170px;">
@@ -25,15 +46,18 @@
                         Log in with your data that you entered during registration.
                     </p> --}}
 
-                    <form action="#">
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl btn-user" id="username" placeholder="Email">
+                            <input type="email" name="email" class="form-control form-control-xl btn-user"
+                                id="email" placeholder="Email" required>
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password">
+                            <input type="password" name="password" class="form-control form-control-xl"
+                                placeholder="Password" required>
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>
@@ -58,10 +82,21 @@
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
-                <div id="auth-right"><img src="assets/18.png" alt="Logo"style="height: 600px; padding: 0% 0% 0% 0%;"></div>
+                <div id="auth-right"><img src="assets/18.png"
+                        alt="Logo"style="height: 600px; padding: 0% 0% 0% 0%;"></div>
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // show the alert
+            setTimeout(function() {
+                $(".alert").alert('close');
+            }, 2000);
+        });
+    </script>
 </body>
 
 </html>
