@@ -20,6 +20,10 @@ class AuthController extends Controller
     {
         return view('Auth.login');
     }
+    public function lupa_password()
+    {
+        return view('Auth.lupa_password');
+    }
 
     public function authenticate(Request $request): RedirectResponse
     {

@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="float-end">
-                            <label for=""> <a href="#">Lupa password ?</a> </label>
+                            <label for=""> <a href="/lupa_password">Lupa password ?</a> </label>
                         </div>
                         {{-- <button type="login" class="btn btn-login">Login</button> --}}
                         <button class="btn-login btn-lg shadow-lg mt-5">

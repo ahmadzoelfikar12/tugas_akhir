@@ -25,6 +25,7 @@ Route::get('/', function () {
 
 //untuk Login
 Route::get('/login', [AuthController::class, 'index'])->Middleware('guest')->name('login');
+Route::get('/lupa_password', [AuthController::class, 'lupa_password'])->Middleware('guest')->name('lupa_password');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
