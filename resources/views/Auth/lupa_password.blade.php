@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN | LIDITUNE</title>
+    <title>LUPA PASSWORD | LIDITUNE</title>
     <link rel="stylesheet" href="assets/css/main/custom.css">
     <link rel="stylesheet" href="assets/css/main/app.css">
     <link rel="stylesheet" href="assets/css/main/app-dark.css">
@@ -16,6 +16,17 @@
     <div id="auth" style="overflow: hidden">
         <div class="row">
             <div class="col-lg-5 col-12">
+                <div>
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">{!! session('error') !!}
+                        </div>
+                    @endif
+
+                    @if (session()->has('success'))
+                        <div class="alert alert-success">{!! session('success') !!}
+                        </div>
+                    @endif
+                </div>
                 <div id="auth-left">
                     <div class="auth-logo">
                         <img src="{{ asset('assets/logo1.png') }}" id="logo_login" alt="Logo"style="height: 170px;">
@@ -25,9 +36,17 @@
                         Log in with your data that you entered during registration.
                     </p> --}}
 
-                    <form action="#">
+                    <form action="{{ route('email_test') }}" method="POST">
+                        @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl btn-user" id="username" placeholder="Email">
+                            <input type="email" name="email" class="form-control form-control-xl btn-user" id="email" placeholder="Masukkan Email"
+                            @error('email') is-invalid @enderror required
+                                                    value="{{ old('email') }}">
+                                                @error('email')
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
@@ -39,9 +58,18 @@
                             </label>
                         </div> --}}
                         {{-- <button type="login" class="btn btn-login">Login</button> --}}
-                        <button class="btn-login btn-lg shadow-lg mt-5">
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ route('login') }}" class="btn-login2 btn-lg shadow-lg mt-5" id="back">KEMBALI</a>
+                            <button class="btn-login2 btn-lg shadow-lg mt-5">
+                                SUBMIT
+                            </button>
+                        </div>
+                        {{-- <button class="btn-login btn-lg shadow-lg mt-5">
                             SUBMIT
                         </button>
+                        <button class="btn-login btn-lg shadow-lg mt-5">
+                            KEMBALI
+                        </button> --}}
                     </form>
                     {{-- <div class="text-center mt-5 text-lg fs-4">
                         <p class="text-gray-600">
@@ -59,6 +87,16 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // show the alert
+            setTimeout(function() {
+                $(".alert").alert('close');
+            }, 5000);
+        });
+    </script>
 </body>
 
 </html>

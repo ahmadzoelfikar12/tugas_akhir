@@ -94,7 +94,7 @@
             // show the alert
             setTimeout(function() {
                 $(".alert").alert('close');
-            }, 2000);
+            }, 5000);
         });
     </script>
 </body>
